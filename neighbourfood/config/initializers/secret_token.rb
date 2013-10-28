@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Neighbourfood::Application.config.secret_token = '406be4696bc68889474f43349d6a5afb05d0cc689d252b6bb29254a8c8395a134991debfb9b48b4c872ebe23dde0c32268cd412ab9d8d7d211cc1d68d9a76231'
+Neighbourfood::Application.config.secret_token = 'f8841fd7255f46079c7ca58529a319cdc3caa8454c58b0572b32dbc46be87fadd2be7510c980b756cd5c4adac5ec3ae3474305562b6f21594224affe9f052c67'
