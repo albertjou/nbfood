@@ -2,5 +2,5 @@
   %ol
     - @user.errors.full_messages.each do |msg|
       %li= msg
-
-= render partial: "form"
+%div.container
+  = render partial: "form"
