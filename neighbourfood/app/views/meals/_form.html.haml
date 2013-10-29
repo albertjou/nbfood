@@ -1,0 +1,23 @@
+= form_for @meal do |f|
+  = f.label :name
+  = f.text_field :name, :autofocus => true, :class => "form-control"
+
+  = f.label :image
+  = f.text_field :image, :class => "form-control"
+
+  = f.label :cuisine
+  = f.text_field :cuisine, :class => "form-control"
+
+  = f.label :address
+  = f.text_field :address, :class => "form-control"
+
+  = f.label :price
+  = f.text_field :price, :class => "form-control"
+
+  = f.label :servings
+  = f.text_field :servings, :class => "form-control"
+
+  = f.label :notes
+  = f.text_area :notes, :class => "form-control", :rows=>"5"
+
+  = f.submit

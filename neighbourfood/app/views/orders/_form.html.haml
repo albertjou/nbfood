@@ -1,0 +1,5 @@
+= form_for @order, :method => :post, :url => buy_path do |f|
+  = f.label :servings
+  = f.text_field :servings, :autofocus => true, :class => "form-control"
+
+  = f.submit

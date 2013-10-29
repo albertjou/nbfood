@@ -1,0 +1,6 @@
+- if @meal.errors.any?
+  %ol
+    - @meal.errors.full_messages.each do |msg|
+      %li= msg
+
+= render partial: "form"

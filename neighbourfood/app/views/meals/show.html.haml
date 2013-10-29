@@ -1,0 +1,23 @@
+%h2= @meal.name
+%h3= @meal.image
+%h3= @meal.user.username if @meal.user != @auth
+%img{:src => "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@meal.latitude}%2C#{@meal.longitude}", :alt => ""}
+%ul
+  %li= @meal.cuisine
+  %li= @meal.price
+  %li= @meal.servings
+  - @meal.orders.each do |order|
+    -if order.user.present?
+      %li= order.user.fname
+      %li= order.user.phone
+%h3 Nearby meals
+%ul
+  - for meal in @meal.nearbys(10)
+    %li= link_to meal.name, meal
+    / %li= meal.distance.round(2)
+%ul
+  - if @meal.user == @auth
+    %li= link_to("Edit", edit_meal_path(@meal))
+    %li= link_to("Delete", meal_path(@meal), :method => 'delete', :confirm => 'Are you sure?')
+  - else
+    %li= link_to("Buy", buy_path)

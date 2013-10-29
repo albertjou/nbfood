@@ -1,0 +1,5 @@
+%ul
+  - @orders.each do |order|
+    %li= order.meal.name
+    %li= order.servings
+    %li= order.meal.user.username

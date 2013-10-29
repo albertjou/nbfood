@@ -1,0 +1,34 @@
+# == Schema Information
+#
+# Table name: meals
+#
+#  id         :integer          not null, primary key
+#  name       :string(255)
+#  image      :text
+#  cuisine    :string(255)
+#  address    :string(255)
+#  price      :decimal(, )
+#  servings   :integer
+#  notes      :text
+#  user_id    :integer
+#  latitude   :float
+#  longitude  :float
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  image: MyText
+  cuisine: MyString
+  price: 1.5
+  notes: MyText
+
+two:
+  name: MyString
+  image: MyText
+  cuisine: MyString
+  price: 1.5
+  notes: MyText

@@ -1,0 +1,3 @@
+%ul{:class => "navbar-right"}
+  %li= link_to('Edit User', edit_user_path(@auth))
+  %li= link_to('Logout ' + @auth.username, logout_path, :method => 'get', :confirm => 'Are you sure?')

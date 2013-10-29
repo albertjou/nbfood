@@ -1,0 +1,29 @@
+= form_for @user do |f|
+  -if @user.present?
+    = f.label :username, :autofocus => true
+    = f.text_field :username, :disabled => true, :class => "form-control"
+
+  = f.label :first_name
+  = f.text_field :fname, :class => "form-control"
+
+  = f.label :last_name
+  = f.text_field :lname, :class => "form-control"
+
+  = f.label :email
+  = f.text_field :email, :class => "form-control"
+
+  = f.label :phone
+  = f.text_field :phone, :class => "form-control"
+
+  = f.label :bio
+  = f.text_area :bio, :class => "form-control", :rows => "5"
+
+  = f.label :password
+  = f.password_field :password, :class => "form-control"
+  = f.label :password_confirmation
+  = f.password_field :password_confirmation, :class => "form-control"
+
+  = f.label :image
+  = f.text_field :image, :class => "form-control"
+
+  = f.submit
