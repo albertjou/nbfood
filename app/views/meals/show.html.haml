@@ -20,12 +20,12 @@
   / MIDDLE Column (meal picture)
 
   .col-lg-5.col-md-5.images
-    %img{:src => "#{@meal.image}", :class => "img-responsive"}
+    %img{:src => "#{@meal.image.url}", :class => "img-responsive"}
 
   / RIGHT Column (chef details)
 
   .col-lg-3.col-md-3.chef
-    %img{:src => "#{@meal.user.image}"}
+    %img{:src => "#{@meal.user.image.url}"}
     %h2
       = link_to("#{@meal.user.fname}",user_path(@meal.user))
     %p
@@ -45,7 +45,7 @@
     - for meal in @meal.nearbys(10)
       .box
         = link_to meal.name, meal_path(meal)
-        %img{:src => "#{meal.image}"}
+        %img{:src => "#{meal.image.url}"}
 
 - if @meal.user == @auth
   .row.col-lg-12.col-md-12.controls
