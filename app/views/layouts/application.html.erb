@@ -41,8 +41,21 @@
     <% if flash[:notice].present? %>
       <p><%= flash[:notice] %></p>
     <% end %>
-    <div class="row">
+    <div class="container">
       <%= yield %>
+    <footer>
+      <div class="social">
+        <p>
+        Facebook
+        Twitter
+        Pintrest
+        </p>
+        <p>
+          Join our mailing list
+        </p>
+      </div>
+    </footer>
+
     </div><!-- row -->
   </body>
   </html>

@@ -5,7 +5,7 @@ class CreateMeals < ActiveRecord::Migration
       t.text :image
       t.string :cuisine
       t.string :address
-      t.decimal :price
+      t.decimal :price, scale: 2
       t.integer :servings
       t.text :notes
       t.integer :user_id

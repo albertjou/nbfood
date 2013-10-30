@@ -1,11 +1,11 @@
 .jumbotron
   = form_tag root_path, :method => :get do
-    = text_field_tag :search, params[:search]
+    = text_field_tag :search, params[:search], :value => "#{request.location}"
     = select_tag :distance, options_for_select([['1 km',1],['2 km', 2],['5 km', 5]])
-    = submit_tag "Search Nearby", :name => nil
+    = button_to "Search Nearby", :name => nil, :type => "submit", :class => "btn btn-primary btn-lg"
 
 - @meals.each do |meal|
-  .col-md-3.meal
+  %article.col-md-3.box.preview-meal
     %h1= link_to meal.name, meal_path(meal)
     %p= meal.image
     Cuisine:

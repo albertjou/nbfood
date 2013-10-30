@@ -1,29 +1,54 @@
-/ Main column
-.col-lg-8
-  %h2= @meal.name
-  %img{:src => "#{@meal.image}", :height => '150px'}
+.row
+  / LEFT Column (meal details)
+  .col-lg-4.col-md-4.about
+    %h2
+      = @meal.name
+    %p= @meal.address
+    .panel
+      .panel-heading
+        %h3.panel-title
+          Details
+      %p
+        = @meal.notes
+    %p.price
+      $
+      = number_with_precision(@meal.price, :precision => 0)
+      = link_to(image_tag("http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@meal.latitude}%2C#{@meal.longitude}", :class => "img-responsive"),"http://maps.google.com/maps?&z=100&q=#{@meal.address.to_s.gsub(" ","+")}", :target => 'new')
+      - if @meal.user != @auth
+        = link_to("Buy", buy_path, :class => 'buy')
 
-  %ul
-    %li= @meal.cuisine
-    %li= @meal.price
-    %li= @meal.servings
-    - @meal.orders.each do |order|
-      -if order.user.present?
-        %li= order.user.fname
-        %li= order.user.phone
-  %h3 Nearby meals
-  %ul
+  / MIDDLE Column (meal picture)
+
+  .col-lg-5.col-md-5.images
+    %img{:src => "#{@meal.image}", :class => "img-responsive"}
+
+  / RIGHT Column (chef details)
+
+  .col-lg-3.col-md-3.chef
+    %img{:src => "#{@meal.user.image}"}
+    %h2
+      = link_to("#{@meal.user.fname}",user_path(@meal.user))
+    %p
+      Contact me button
+    %p
+      Rating - feature coming soon
+    %p
+      = @meal.user.bio
+    %p
+      Verification - feature coming soon
+
+.row
+  / BOTTOM Row (nearby meals)
+  .col-lg-12.col-md-12.nearby
+    %h3
+      Nearby meals
     - for meal in @meal.nearbys(10)
-      %li= link_to meal.name, meal
-      / %li= meal.distance.round(2)
-  %ul
-    - if @meal.user == @auth
-      %li= link_to("Edit", edit_meal_path(@meal))
-      %li= link_to("Delete", meal_path(@meal), :method => 'delete', :confirm => 'Are you sure?')
-    - else
-      %li= link_to("Buy", buy_path)
+      .box
+        = link_to meal.name, meal_path(meal)
+        %img{:src => "#{meal.image}"}
 
-/ Right column
-.col-lg-4
-  %h3= @meal.user.username if @meal.user != @auth
-  %img{:src => "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@meal.latitude}%2C#{@meal.longitude}", :alt => ""}
+- if @meal.user == @auth
+  .row.col-lg-12.col-md-12.controls
+    = link_to("Edit", edit_meal_path(@meal))
+    = link_to("Delete", meal_path(@meal), :method => 'delete', :confirm => 'Are you sure?')
+

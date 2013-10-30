@@ -3,10 +3,18 @@
     %ul
       %li= link_to meal.name, meal_path(meal)
       %li= meal.image
-      %li= meal.cuisine
-      %li= meal.price
-      %li= meal.servings
-      %li= meal.user.username
+      %li
+        Cuisine:
+        = meal.cuisine
+      %li
+        Price:
+        = meal.price
+      %li
+        Servings:
+        = meal.servings
+      %li
+        By:
+        = meal.user.username
 - else
   %h1 Sorry you don't have any meals
   %h3= link_to('Create one now', new_meal_path)

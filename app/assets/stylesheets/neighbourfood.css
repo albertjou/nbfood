@@ -11,3 +11,45 @@ img {
   text-align: center;
   margin-left: 10px;
 }
+
+.box {
+  font-size: 14px;
+  line-height: 17px;
+  vertical-align: top;
+  display: inline-block;
+  margin: 0 16px 45px 0;
+  width: 316px;
+  color: #000;
+}
+
+.main {
+  text-align: center;
+}
+
+.about {
+  background-color: rgba(254,211,108,0.3);
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.about img {
+  border-radius: 50px;
+}
+
+.images {
+  background-color: rgba(254,159,59,0.3);
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.chef {
+  padding-bottom: 20px;
+  padding-top: 20px;
+  background-color: rgba(254,211,108,0.3);
+  font-size: 1em;
+}
+
+.chef img{
+  margin: 0 0 6px;
+  position: relative;
+}
