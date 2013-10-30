@@ -1,34 +1,53 @@
 = form_for @user, :html => {:multipart => true}, :class => "form-control" do |f|
   %div.input-group
-    - if !@user.id.nil?
+    %span.input-group-addon
       = f.label :username, :autofocus => true
+    - if !@user.id.nil?
       = f.text_field :username, :disabled => true, :class => "form-control"
     - else
-      = f.label :username, :autofocus => true
       = f.text_field :username, :class => "form-control"
+  %br
   %div.input-group
-    = f.label :first_name
+    %span.input-group-addon
+      = f.label :first_name
     = f.text_field :fname, :class => "form-control"
+  %br
   %div.input-group
-    = f.label :last_name
+    %span.input-group-addon
+      = f.label :last_name
     = f.text_field :lname, :class => "form-control"
+  %br
   %div.input-group
-    = f.label :email
+    %span.input-group-addon
+      = f.label :email
     = f.text_field :email, :class => "form-control"
+  %br
   %div.input-group
-    = f.label :phone
+    %span.input-group-addon
+      = f.label :phone
     = f.text_field :phone, :class => "form-control"
+  %br
   %div.input-group
-    = f.label :bio
+    %span.input-group-addon
+      = f.label :bio
     = f.text_area :bio, :class => "form-control", :rows => "5"
+  %br
   %div.input-group
-    = f.label :password
+    %span.input-group-addon
+      = f.label :password
     = f.password_field :password, :class => "form-control"
+  %br
   %div.input-group
-    = f.label :password_confirmation
+    %span.input-group-addon
+      = f.label :password_confirmation, "Confirm"
     = f.password_field :password_confirmation, :class => "form-control"
+  %br/
   %div.input-group
-    = f.label :image
+    - if @user.image.url.present?
+      %img{:src => @user.image.url, :alt => ""}
+    %br/
+    %span.input-group-addon
+      = f.label :image
     = f.file_field :image
-
-    = f.submit
+  %br/
+  == <input type="submit" value="#{ @user.id.present?? 'Edit User' : 'Create User' }">

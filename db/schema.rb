@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(:version => 20131028013746) do
 
   create_table "meals", :force => true do |t|
     t.string   "name"
-    t.text     "image"
+    t.string   "image"
     t.string   "cuisine"
     t.string   "address"
     t.decimal  "price"
@@ -40,13 +40,13 @@ ActiveRecord::Schema.define(:version => 20131028013746) do
   create_table "users", :force => true do |t|
     t.string   "fname"
     t.string   "lname"
+    t.date     "dob"
     t.string   "email"
     t.string   "phone"
     t.text     "bio"
     t.string   "password_digest"
-    t.text     "image"
+    t.string   "image"
     t.boolean  "cook"
-    t.string   "username"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
   end

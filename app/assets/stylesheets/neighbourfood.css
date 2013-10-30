@@ -6,6 +6,23 @@ img {
   height: 200px;
 }
 
+.search {
+  width: 60%;
+  border-radius: 10px;
+  display: inline;
+}
+#distance select {
+  width: 10%;
+}
+
+.submit {
+  width: 25%;
+  display: inline;
+  border-radius: 10px;
+  background-color: white;
+
+}
+
 /***********************
   Meal preview on homepage
 ***********************/
@@ -15,12 +32,18 @@ img {
   vertical-align: top;
   border: 5px solid;
   min-width: 200px;
+  max-width: 350px;
   width: 50%;
+  min-height: 300px;
+  max-height: 600px;
 }
+
 .preview-meal img {
   border-bottom: 5px solid;
   padding-bottom: 15px;
   width: 100%;
+  max-height: 400px;
+  min-height: 300px;
 }
 
 .preview-details {

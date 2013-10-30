@@ -3,13 +3,13 @@ class CreateUsers < ActiveRecord::Migration
     create_table :users do |t|
       t.string :fname
       t.string :lname
+      t.date :dob
       t.string :email
       t.string :phone
       t.text :bio
       t.string :password_digest
-      t.text :image
+      t.string :image
       t.boolean :cook
-      t.string :username
 
       t.timestamps
     end
