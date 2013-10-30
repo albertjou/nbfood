@@ -42,4 +42,7 @@ class User < ActiveRecord::Base
             :presence => true,
             :format => { :with => VALID_EMAIL_REGEX },
             :uniqueness => { :case_sensitive => false }
+
+  mount_uploader :image, ImageUploader
+
 end
