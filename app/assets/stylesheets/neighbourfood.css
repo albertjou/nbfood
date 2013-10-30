@@ -5,22 +5,45 @@ ul {
 img {
   height: 200px;
 }
-.meal {
-  border: 5px solid black;
-  padding: 5px;
-  text-align: center;
-  margin-left: 10px;
-}
 
+/***********************
+  Meal preview on homepage
+***********************/
 .box {
   font-size: 14px;
   line-height: 17px;
   vertical-align: top;
-  display: inline-block;
-  margin: 0 16px 45px 0;
-  width: 316px;
-  color: #000;
+  border: 5px solid;
+  min-width: 200px;
+  width: 50%;
 }
+.preview-meal img {
+  border-bottom: 5px solid;
+  padding-bottom: 15px;
+  width: 100%;
+}
+
+.preview-details {
+  padding-top: 10px;
+  margin: 0 auto;
+}
+.preview ul, li {
+  display: inline;
+}
+
+.name {
+  font-size: 30px;
+  text-align: left;
+}
+
+.price {
+  float: right;
+  font-size: 20px;
+}
+
+/***********************
+  Show individual meal CSS
+***********************/
 
 .main {
   text-align: center;

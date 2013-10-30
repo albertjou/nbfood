@@ -1,18 +1,19 @@
 .jumbotron
-  = form_tag root_path, :method => :get do
-    = text_field_tag :search, params[:search], :value => "#{request.location}"
-    = select_tag :distance, options_for_select([['1 km',1],['2 km', 2],['5 km', 5]])
-    = button_to "Search Nearby", :name => nil, :type => "submit", :class => "btn btn-primary btn-lg"
+	= form_tag root_path, :method => :get, :class => 'form-group' do
+		= text_field_tag :search, params[:search]
+		= select_tag :distance, options_for_select([['1 km',1],['2 km', 2],['5 km', 5]])
+		= button_to "Search Nearby", :name => nil, :type => "submit", :class => "btn btn-primary btn-lg"
 
 - @meals.each do |meal|
-  %article.col-md-3.box.preview-meal
-    %h1= link_to meal.name, meal_path(meal)
-    %p= meal.image
-    Cuisine:
-    %p= meal.cuisine
-    Price:
-    %p= meal.price
-    Servings remaining:
-    %p= meal.servings
-    By:
-    %p= meal.user.username
+	%article.col-md-3.col-lg-3.col-sm-3.box.preview-meal
+		= link_to(image_tag(meal.image, :class=> "img-responsive"), meal_path(meal))
+		.preview-details
+			%span.name
+				= link_to meal.name, meal_path(meal)
+			%span.price
+				$
+				= number_with_precision(meal.price, :precision => 0)
+			%p
+				= meal.address
+			%p
+				= meal.user.username
