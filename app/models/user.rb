@@ -5,13 +5,14 @@
 #  id              :integer          not null, primary key
 #  fname           :string(255)
 #  lname           :string(255)
+#  username        :string(255)
+#  dob             :date
 #  email           :string(255)
 #  phone           :string(255)
 #  bio             :text
 #  password_digest :string(255)
-#  image           :text
+#  image           :string(255)
 #  cook            :boolean
-#  username        :string(255)
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #
@@ -22,7 +23,7 @@ class User < ActiveRecord::Base
   before_save {self.email = email.downcase}
   before_save {self.username = username.downcase}
 
-  attr_accessible :bio, :cook, :email, :fname, :image, :lname, :password, :password_confirmation, :phone, :username, :order_ids
+  attr_accessible :bio, :cook, :email, :fname, :image, :lname, :password, :password_confirmation, :phone, :username, :order_ids, :dob, :cook
 
   has_many :orders
   has_many :meals
@@ -42,6 +43,7 @@ class User < ActiveRecord::Base
             :presence => true,
             :format => { :with => VALID_EMAIL_REGEX },
             :uniqueness => { :case_sensitive => false }
+
 
   mount_uploader :image, ImageUploader
 

@@ -23,6 +23,13 @@ img {
 
 }
 
+.glyphicon {
+  position: static;
+}
+
+.left {
+  min-width: 120px;
+}
 /***********************
   Meal preview on homepage
 ***********************/

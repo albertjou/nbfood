@@ -3,6 +3,7 @@ class CreateUsers < ActiveRecord::Migration
     create_table :users do |t|
       t.string :fname
       t.string :lname
+      t.string :username
       t.date :dob
       t.string :email
       t.string :phone
@@ -10,6 +11,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :password_digest
       t.string :image
       t.boolean :cook
+      t.integer :rating
 
       t.timestamps
     end

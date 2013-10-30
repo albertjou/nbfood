@@ -11,10 +11,16 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new params[:user]
-    if @user.save
-      session[:user_id] = @user.id
-      redirect_to root_path
+    if params[:input_terms_consent]
+      if @user.save
+        session[:user_id] = @user.id
+        flash[:notice] = "Welcome to the community"
+        redirect_to root_path
+      else
+        render :new
+      end
     else
+      flash[:notice] = "You must accept the Terms and Conditions"
       render :new
     end
   end

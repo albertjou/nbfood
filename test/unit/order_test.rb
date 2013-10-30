@@ -7,6 +7,7 @@
 #  servings   :integer          default(1)
 #  user_id    :integer
 #  meal_id    :integer
+#  status     :string(255)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #

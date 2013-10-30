@@ -5,6 +5,7 @@ class CreateOrders < ActiveRecord::Migration
       t.integer :servings, :default => 1
       t.integer :user_id
       t.integer :meal_id
+      t.string :status
       t.timestamps
     end
   end

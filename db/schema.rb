@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(:version => 20131028013746) do
     t.integer  "servings",   :default => 1
     t.integer  "user_id"
     t.integer  "meal_id"
+    t.string   "status"
     t.datetime "created_at",                :null => false
     t.datetime "updated_at",                :null => false
   end
@@ -40,6 +41,7 @@ ActiveRecord::Schema.define(:version => 20131028013746) do
   create_table "users", :force => true do |t|
     t.string   "fname"
     t.string   "lname"
+    t.string   "username"
     t.date     "dob"
     t.string   "email"
     t.string   "phone"

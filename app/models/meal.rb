@@ -4,7 +4,7 @@
 #
 #  id         :integer          not null, primary key
 #  name       :string(255)
-#  image      :text
+#  image      :string(255)
 #  cuisine    :string(255)
 #  address    :string(255)
 #  price      :decimal(, )
