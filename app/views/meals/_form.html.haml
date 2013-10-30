@@ -1,23 +1,42 @@
 = form_for @meal, :html => {:multipart => true} do |f|
-  = f.label :name
-  = f.text_field :name, :autofocus => true, :class => "form-control"
+  %div.input-group
+    %span.input-group-addon.left
+      = f.label :name
+    = f.text_field :name, :autofocus => true, :class => "form-control"
+  %br/
+  %div.input-group
+    - if @meal.image.url.present?
+      %img{:src => @meal.image.url, :alt => ""}
+    %br/
+    %span.input-group-addon.left
+      = f.label :image
+    = f.file_field :image
+  %br/
+  %div.input-group.short-field
+    %span.input-group-addon.left
+      = f.label :cuisine
+    = f.text_field :cuisine, :class => "form-control"
+  %br/
+  %div.input-group.short-field
+    %span.input-group-addon.left
+      = f.label :price
+    = f.text_field :price, :class => "form-control"
+    %span.input-group-addon .00
+  %br/
+  %div.input-group.short-field
+    %span.input-group-addon.left
+      = f.label :servings
+    = f.text_field :servings, :class => "form-control"
+  %br/
+  %div.input-group
+    %span.input-group-addon.left
+      = f.label :address
+    = f.text_field :address, :class => "form-control"
+  %br/
+  %div.input-group
+    %span.input-group-addon.left
+      = f.label :notes
+    = f.text_area :notes, :class => "form-control", :rows=>"5"
+  %br/
+  == <input type="submit" value="#{ @meal.id.present?? 'Edit Meal' : 'Create Meal' }">
 
-  = f.label :image
-  = f.file_field :image
-
-  = f.label :cuisine
-  = f.text_field :cuisine, :class => "form-control"
-
-  = f.label :address
-  = f.text_field :address, :class => "form-control"
-
-  = f.label :price
-  = f.text_field :price, :class => "form-control"
-
-  = f.label :servings
-  = f.text_field :servings, :class => "form-control"
-
-  = f.label :notes
-  = f.text_area :notes, :class => "form-control", :rows=>"5"
-
-  = f.submit

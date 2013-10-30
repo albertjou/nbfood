@@ -30,6 +30,10 @@ img {
 .left {
   min-width: 120px;
 }
+
+.short-field {
+  max-width: 400px;
+}
 /***********************
   Meal preview on homepage
 ***********************/
