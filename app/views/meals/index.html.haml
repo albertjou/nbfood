@@ -1,21 +1,17 @@
--  if @meals.length > 0
-  - @meals.each do |meal|
-    %ul
-      %li= link_to meal.name, meal_path(meal)
-      %li
-        %img{:src => "#{meal.user.image.url}"}
-      %li
-        Cuisine:
-        = meal.cuisine
-      %li
-        Price:
-        = meal.price
-      %li
-        Servings:
-        = meal.servings
-      %li
-        By:
-        = meal.user.username
-- else
-  %h1 Sorry you don't have any meals
-  %h3= link_to('Create one now', new_meal_path)
+- @meals.each do |meal|
+  %ul
+    %li= link_to meal.name, meal_path(meal)
+    %li
+      %img{:src => "#{meal.user.image.url}"}
+    %li
+      Cuisine:
+      = meal.cuisine
+    %li
+      Price:
+      = meal.price
+    %li
+      Servings:
+      = meal.servings
+    %li
+      By:
+      = meal.user.username

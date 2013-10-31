@@ -1,5 +1,27 @@
-%ul
+%table
+  %tr
+    %th Status
+    %th Location
+    %th host
+    %th Time
+    %th Price
+    %th Rating
   - @orders.each do |order|
-    %li= order.meal.name
-    %li= order.servings
-    %li= order.meal.user.username
+    %tr
+      %td.status
+      %td.location
+        = link_to order.meal.address, "http://maps.google.com/maps?&z=100&q=#{order.meal.address.to_s.gsub(" ","+")}"
+      %td.host
+        = link_to order.meal.user.fname, user_path(order.meal.user)
+      %td.time
+        = order.created_at
+      %td.price
+        - if (order.status == 'requested')
+          = number_with_precision(order.meal.price, :precision => 0)
+        - else
+          N/A
+      %td.rating
+        - if (order.status == 'completed')
+          Will implement rating system later
+        - else
+          N/A

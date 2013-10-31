@@ -11,9 +11,12 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new params[:user]
+    raise params.inspect
     if params[:input_terms_consent]
       if @user.save
         session[:user_id] = @user.id
+        # Tell the UserMailer to send a welcome Email after save
+        UserMailer.welcome_email(@user).deliver
         flash[:notice] = "Welcome to the community"
         redirect_to root_path
       else

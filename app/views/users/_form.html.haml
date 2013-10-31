@@ -21,7 +21,11 @@
   %div.input-group
     %span.input-group-addon.left
       = f.label :dob, "Date of Birth"
-    = f.text_field :dob, :class => "form-control"
+    / = f.text_field :dob, :class => "form-control"
+
+    / Date select form helper
+    = f.date_select :dob
+
     %span.input-group-addon.glyphicon.glyphicon-lock
   %br
   %div.input-group
@@ -59,5 +63,6 @@
       = f.label :image
     = f.file_field :image
   %br/
-  ==<input type="checkbox" name="input_terms_consent" value="true" checked> I agree to the <a href="/terms.html", target= "_blank">terms and conditions</a>
+  - if !@user.id.present?
+    ==<input type="checkbox" name="input_terms_consent" value="true" checked> I agree to the <a href="/terms.html", target= "_blank">terms and conditions</a>
   == <input type="submit" value="#{ @user.id.present?? 'Edit User' : 'Create User' }">

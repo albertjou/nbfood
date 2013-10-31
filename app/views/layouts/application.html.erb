@@ -20,13 +20,13 @@
       </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <li><%= link_to "Create Meal", new_meal_path %></li>
+          <li><%= link_to "Cook a Meal", new_meal_path %></li>
           <% if @auth.present? %>
             <% if @auth.meals.length > 0 %>
-              <li><%= link_to('My meals', meals_path(@auth)) %></li>
+              <li><%= link_to('My Meals', meals_path(@auth)) %></li>
             <% end %>
             <% if @auth.orders.length > 0 %>
-              <li><%= link_to('My orders', orders_path) %></li>
+              <li><%= link_to('My Orders', orders_path) %></li>
             <% end %>
           <% end %>
         </ul>

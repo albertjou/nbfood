@@ -9,8 +9,6 @@ gem 'pg'
 gem 'haml'
 gem 'bcrypt-ruby', '3.0.0'
 gem 'geocoder'
-gem 'paperclip', '~> 3.0'
-gem 'devise'
 gem 'rails_12factor'
 
 
@@ -42,5 +40,13 @@ group :development, :test do
   gem 'meta_request'
   # Add RailsPanel extension in the Chrome Web Store
 end
+
+# group :wishlist do
+#   gem 'paperclip', '~> 3.0'
+#   gem 'devise'
+#   gem 'validatestimeliness'
+#   gem 'dynamicform'
+#   gem 'omniauth'
+# end
 
 gem 'jquery-rails'

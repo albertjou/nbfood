@@ -2,10 +2,6 @@ ul {
   list-style: none;
 }
 
-img {
-  height: 200px;
-}
-
 .search {
   width: 60%;
   border-radius: 10px;
@@ -104,9 +100,4 @@ img {
   padding-top: 20px;
   background-color: rgba(254,211,108,0.3);
   font-size: 1em;
-}
-
-.chef img{
-  margin: 0 0 6px;
-  position: relative;
 }

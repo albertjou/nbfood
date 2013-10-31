@@ -21,6 +21,7 @@ class MealsController < ApplicationController
 
   def show
     @meal = Meal.find(params[:id])
+    @meals = @meal.nearbys(10)
   end
 
 
