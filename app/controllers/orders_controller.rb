@@ -6,6 +6,11 @@ class OrdersController < ApplicationController
     @order = Order.new
   end
 
+  def show
+    @order = Order.find(params[:id])
+    @meals << @order.meal
+  end
+
   def create
     @meal = Meal.find(params[:id])
     @order = Order.new params[:order]
@@ -24,6 +29,15 @@ class OrdersController < ApplicationController
 
   def edit
     @order = Order.find(params[:id])
+    @meals = []
+    @meals << @order.meal
+  end
+
+  def update
+    @order = Order.find(params[:id])
+    @order.status = params[:status]
+    @order.save
+    redirect_to meals_path
   end
 
   private

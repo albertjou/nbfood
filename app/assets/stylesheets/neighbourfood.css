@@ -128,3 +128,10 @@ td {
   width: 10%;
 }
 
+/***********************
+  Show individual order CSS
+***********************/
+
+.label {
+  color: black;
+}

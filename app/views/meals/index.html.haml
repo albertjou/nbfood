@@ -1,17 +1,21 @@
+%h1 My meals
 - @meals.each do |meal|
-  %ul
-    %li= link_to meal.name, meal_path(meal)
-    %li
-      %img{:src => "#{meal.user.image.url}"}
-    %li
-      Cuisine:
-      = meal.cuisine
-    %li
-      Price:
-      = meal.price
-    %li
-      Servings:
-      = meal.servings
-    %li
-      By:
-      = meal.user.username
+  .row.col-lg-12.col-md-12.col-sm-12.col-xs-12
+    %h2
+      = link_to meal.name, meal_path(meal), :target => "_blank"
+    %table.col-lg-12.col-md-12.col-sm-12.col-xs-12
+      %tr
+        %th.first Status
+        %th.second Buyer
+        %th.third Time
+        %th.second Message
+      - meal.orders.each do |order|
+        %tr
+          %td{:class => "#{order.status}"}
+            = link_to order.status.upcase, edit_order_path(order)
+          %td.buyer
+            = link_to order.user.username, user_path(order.user), :target => "_blank"
+          %td.time
+            = order.created_at.strftime("%I:%M%p %-d %b, %Y")
+          %td.message
+            = link_to(raw('<span class="glyphicon glyphicon-envelope"></span>'), user_path(order.meal.user))

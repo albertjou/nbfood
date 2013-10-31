@@ -8,7 +8,7 @@ Neighbourfood::Application.routes.draw do
   post '/meals/:id/buy' => 'orders#create'
   get '/orders' => 'orders#index'
 
-  resources :users, :meals
+  resources :users, :meals, :orders
   # , except => [:edit] do
   #   collection do
   #     get 'edit'

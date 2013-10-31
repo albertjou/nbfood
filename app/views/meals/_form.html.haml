@@ -28,6 +28,11 @@
       = f.label :servings
     = f.text_field :servings, :class => "form-control"
   %br/
+  %div.input-group.short-field
+    %span.input-group-addon.left
+      = f.label :scheduled, "Schedule meal:"
+    = f.datetime_select(:scheduled, discard_year: true, default: now, ampm: true, minute_step: 15, :class => "form-control")
+  %br/
   %div.input-group
     %span.input-group-addon.left
       = f.label :address

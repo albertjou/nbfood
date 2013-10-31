@@ -12,6 +12,7 @@ class CreateMeals < ActiveRecord::Migration
       t.float :latitude
       t.float :longitude
       t.integer :rating
+      t.datetime :scheduled
 
       t.timestamps
     end
