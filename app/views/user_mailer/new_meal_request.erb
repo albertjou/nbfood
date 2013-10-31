@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>New order!</h1>
+    <hr>
+    <h2>Hi <%= @chef.fname.capitalize %></h2>
+    <p>
+      <%= link_to "#{@buyer.fname.capitalize}", "http://www.neighbourfood.com.au/users/#{@buyer.id}" %> wants to buy <%= link_to "#{@order.meal.name}", "http://www.neighbourfood.com.au/meals/#{@order.meal.id}" %> to be picked up at <%= @order.pickup %>. Please confirm with them via <%= @buyer.phone %>.
+    <p>
+      If you need further assistance, contact our support team at support@neighbourfood.com.au <br>
+      Tasty Regards!<br>
+      The NeighbourFood Team<br>
+    </p>
+  </body>
+</html>
+
