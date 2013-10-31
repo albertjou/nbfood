@@ -1,0 +1,10 @@
+= render partial: "pages/preview"
+.col-md-3.col-lg-3.col-sm-3.col-xs-3
+  = form_for @order, :method => :post, :url => buy_path do |f|
+    = f.label :servings
+    = f.text_field :servings, :autofocus => true, :class => "form-control"
+    = select_tag :status, options_for_select([['Requested', 'requested'], ['Completed', 'completed'], ['Cancel', 'cancelled']], params[:status])
+    = f.time_select, {minute_step: 15, ampm: true}
+
+    %br/
+    = f.submit
