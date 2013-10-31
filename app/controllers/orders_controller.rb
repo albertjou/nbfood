@@ -18,6 +18,7 @@ class OrdersController < ApplicationController
     @order.user = @auth
     @auth.orders << @order
     @meal.orders << @order
+    UserMailer.new_meal_request(@order).deliver
     redirect_to orders_path
   end
 

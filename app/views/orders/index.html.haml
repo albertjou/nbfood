@@ -1,28 +1,36 @@
-%h1
-  Requested meals
-%table.col-lg-12.col-md-12.col-sm-12.col-xs-12
-  %tr
-    %th.second Meal
-    %th.first Location
-    %th.fifth Host
-    %th.third Time
-    %th.fourth Price
-    %th.fifth Message
-  - @orders_requested.each do |order|
+.requested-order.alert.alert-success
+  %h1
+    Requested meals
+  %table.col-lg-12.col-md-12.col-sm-12.col-xs-12
     %tr
-      %td.meal
-        = link_to order.meal.name, meal_path(order.meal)
-      %td.location
-        = link_to order.meal.address, "http://maps.google.com/maps?&z=100&q=#{order.meal.address.to_s.gsub(" ","+")}"
-      %td.host
-        = link_to order.meal.user.fname, user_path(order.meal.user)
-      %td.time
-        = order.created_at.strftime("%I:%M%p %-d %b, %Y")
-      %td.price
-        $
-        = number_with_precision(order.meal.price, :precision => 0)
-      %td.message
-        = link_to(raw('<span class="glyphicon glyphicon-envelope"></span>'), user_path(order.meal.user))
+      %th.second Meal
+      %th.first Location
+      %th.fifth Host
+      %th.third Time
+      %th.fourth Price
+      %th.fifth Message
+    - @orders_requested.each do |order|
+      %tr
+        %td.meal
+          = link_to order.meal.name, meal_path(order.meal)
+        %td.location
+          = link_to order.meal.address, "http://maps.google.com/maps?&z=100&q=#{order.meal.address.to_s.gsub(" ","+")}"
+        %td.host
+          = link_to order.meal.user.fname, user_path(order.meal.user)
+        %td.time
+          = order.pickup.strftime("%I:%M%p")
+          = order.meal.scheduled.strftime("%-d %b, %Y")
+          (
+          = (order.pickup.hour - Time.now.hour)
+          hours
+          = (order.pickup.minute - Time.now.minute)
+          )
+        %td.price
+          $
+          = number_with_precision(order.meal.price, :precision => 0)
+        %td.message
+          = link_to(raw('<span class="glyphicon glyphicon-envelope"></span>'), user_path(order.meal.user))
+.completed-order
 %h1
   Completed meals
 %table.col-lg-12.col-md-12.col-sm-12.col-xs-12
@@ -47,6 +55,7 @@
           = order.rating
         - else
           = rating link
+.cancelled-order
 %h1
   Cancelled meals
 %table.col-lg-12.col-md-12.col-sm-12.col-xs-12

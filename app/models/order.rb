@@ -14,7 +14,7 @@
 #
 
 class Order < ActiveRecord::Base
-  attr_accessible :servings, :user_id, :meal_id, :status, :rating, :expiry
+  attr_accessible :servings, :user_id, :meal_id, :status, :rating, :pickup
   belongs_to :user
   belongs_to :meal
 

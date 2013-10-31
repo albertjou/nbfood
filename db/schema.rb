@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(:version => 20131028013746) do
   end
 
   create_table "orders", :force => true do |t|
-    t.time     "expiry"
+    t.datetime "pickup"
     t.integer  "servings",   :default => 1
     t.integer  "user_id"
     t.integer  "meal_id"

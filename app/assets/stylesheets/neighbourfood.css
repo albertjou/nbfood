@@ -2,16 +2,10 @@
   font-family: 'Tienne', serif;
 }
 
-
-
 ul {
   list-style: none;
 }
 
-/*.search-box {
-  padding: 0;
-  margin: 0;
-}*/
 .search {
   width: 60%;
   border-radius: 10px;
@@ -135,6 +129,9 @@ td {
   width: 10%;
 }
 
+.requested-order h1{
+  color: green;
+}
 /***********************
   Show individual order CSS
 ***********************/
