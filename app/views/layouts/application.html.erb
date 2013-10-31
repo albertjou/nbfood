@@ -21,8 +21,8 @@
       </div><!-- navbar-header -->
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <li><%= link_to "Cook a Meal", new_meal_path %></li>
           <% if @auth.present? %>
+            <li><%= link_to "Cook a Meal", new_meal_path %></li>
           <% if @auth.meals.length > 0 %>
           <li><%= link_to('My Meals', meals_path) %></li>
           <% end %>

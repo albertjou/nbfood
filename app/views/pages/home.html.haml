@@ -1,12 +1,19 @@
 .jumbotron
-	= form_tag root_path, :method => :get, :class => 'form-group animated rotateIn' do
-		= text_field_tag :search, params[:search], :class=>'search'
-		= select_tag :distance, options_for_select([['1 km',1],['2 km', 2],['5 km', 5]])
-		== <input type="submit" value="Search Nearby" class="submit">
+ %h1
+  Welcome to neighbourfood!
+ %p
+  This website allows you to easily buy and sell your meals. Whether you want to help feed your neighbour, or want to show off your cooking skills, we can help you.
+ %h2
+  Have a look to see which meals are nearby!
+ = form_tag root_path, :method => :get, :class => 'form-group search-box' do
+  = text_field_tag :search, params[:search], :class=>'search'
+  = select_tag :distance, options_for_select([['1 km',1],['2 km', 2],['5 km', 5]])
+  == <input type="submit" value="Search Nearby" class="submit">
+
 - if @meal_message
-	%h1
-		Sorry, there are no meals in that area yet,
-		= link_to("create one now", new_meal_path)
+ %h3.text-center
+  Sorry, there are no meals in that area yet,
+  = link_to("create one now", new_meal_path)
 = render partial: "preview"
 
 

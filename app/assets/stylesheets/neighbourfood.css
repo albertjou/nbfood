@@ -8,13 +8,18 @@ ul {
   list-style: none;
 }
 
+/*.search-box {
+  padding: 0;
+  margin: 0;
+}*/
 .search {
   width: 60%;
   border-radius: 10px;
   display: inline;
 }
-#distance select {
-  width: 10%;
+
+#distance {
+  width: 14%;
 }
 
 .submit {
@@ -22,6 +27,7 @@ ul {
   display: inline;
   border-radius: 10px;
   background-color: white;
+  padding: 5px;
 
 }
 
@@ -140,68 +146,6 @@ td {
 /***********************
   Show individual order CSS
 ***********************/
-
-.animated{-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-duration:1s;-moz-animation-duration:1s;-ms-animation-duration:1s;-o-animation-duration:1s;animation-duration:1s;}.animated.hinge{-webkit-animation-duration:1s;-moz-animation-duration:1s;-ms-animation-duration:1s;-o-animation-duration:1s;animation-duration:1s;}@-webkit-keyframes rotateIn {
-  0% {
-    -webkit-transform-origin: center center;
-    -webkit-transform: rotate(-200deg);
-    opacity: 0;
-  } 100% {
-    -webkit-transform-origin: center center;
-    -webkit-transform: rotate(0);
-    opacity: 1;
-  }
-}
-@-moz-keyframes rotateIn {
-  0% {
-    -moz-transform-origin: center center;
-    -moz-transform: rotate(-200deg);
-    opacity: 0;
-  }
-
-  100% {
-    -moz-transform-origin: center center;
-    -moz-transform: rotate(0);
-    opacity: 1;
-  }
-}
-@-o-keyframes rotateIn {
-  0% {
-    -o-transform-origin: center center;
-    -o-transform: rotate(-200deg);
-    opacity: 0;
-  }
-
-  100% {
-    -o-transform-origin: center center;
-    -o-transform: rotate(0);
-    opacity: 1;
-  }
-}
-@keyframes rotateIn {
-  0% {
-    transform-origin: center center;
-    transform: rotate(-200deg);
-    opacity: 0;
-  }
-
-  100% {
-    transform-origin: center center;
-    transform: rotate(0);
-    opacity: 1;
-  }
-}
-
-.rotateIn {
-  -webkit-animation-name: rotateIn;
-  -moz-animation-name: rotateIn;
-  -o-animation-name: rotateIn;
-  animation-name: rotateIn;
-}
-
-.jumbotron {
-
-}
 
 footer {
   padding-top: 60px;
