@@ -10,6 +10,7 @@ gem 'haml'
 gem 'bcrypt-ruby', '3.0.0'
 gem 'geocoder'
 gem 'rails_12factor'
+gem 'rmagick' , :require => 'RMagick'
 
 
 # Gems used only for assets and not required
@@ -20,7 +21,6 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
   gem 'therubyracer'
   gem 'less-rails-bootstrap'
-  gem 'rmagick'
   gem 'carrierwave'
   gem 'fog', '~>1.3.1'
 end
