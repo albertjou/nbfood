@@ -18,6 +18,7 @@
 #
 
 class Meal < ActiveRecord::Base
+  mount_uploader :image, ImageUploader
   attr_accessible :cuisine, :image, :name, :notes, :price, :user_id, :servings, :order_ids, :address
   has_many :orders
   belongs_to :user
@@ -25,5 +26,4 @@ class Meal < ActiveRecord::Base
   geocoded_by :address
   after_validation :geocode, :if => :address_changed?
 
-  mount_uploader :image, ImageUploader
 end
