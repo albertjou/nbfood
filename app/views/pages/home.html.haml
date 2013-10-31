@@ -1,5 +1,5 @@
 .jumbotron
-	= form_tag root_path, :method => :get, :class => 'form-group' do
+	= form_tag root_path, :method => :get, :class => 'form-group animated rotateIn' do
 		= text_field_tag :search, params[:search], :class=>'search'
 		= select_tag :distance, options_for_select([['1 km',1],['2 km', 2],['5 km', 5]])
 		== <input type="submit" value="Search Nearby" class="submit">

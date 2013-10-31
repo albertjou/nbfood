@@ -5,6 +5,8 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Tienne' rel='stylesheet' type='text/css'>
 </head>
 <body>
   <div class="navbar navbar-inverse navbar-static-top">
@@ -16,18 +18,17 @@
           <span class="icon-bar"></span>
         </button>
         <%= link_to "Neighbourfood", root_path, :class => "navbar-brand" %>
-
-      </div>
+      </div><!-- navbar-header -->
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
           <li><%= link_to "Cook a Meal", new_meal_path %></li>
           <% if @auth.present? %>
-            <% if @auth.meals.length > 0 %>
-              <li><%= link_to('My Meals', meals_path) %></li>
-            <% end %>
-            <% if @auth.orders.length > 0 %>
-              <li><%= link_to('My Orders', orders_path) %></li>
-            <% end %>
+          <% if @auth.meals.length > 0 %>
+          <li><%= link_to('My Meals', meals_path) %></li>
+          <% end %>
+          <% if @auth.orders.length > 0 %>
+          <li><%= link_to('My Orders', orders_path) %></li>
+          <% end %>
           <% end %>
         </ul>
         <ul class="nav navbar-nav navbar-right">
@@ -38,28 +39,32 @@
           <li><%= link_to("Sign Up", new_user_path) %></li>
           <%= render :partial => '/session/login' %>
           <% end %>
-        </div><!--/.navbar-collapse -->
-      </div>
-    </div>
-  </div>
-  <% if flash[:notice].present? %>
-    <p><%= flash[:notice] %></p>
-  <% end %>
+        </ul>
+      </div><!--/.navbar-collapse -->
+    </div><!-- container -->
+  </div><!-- navbar -->
+
+<% if flash[:notice].present? %>
+  <p><%= flash[:notice] %></p>
+<% end %>
+<div class="container main-section">
+  <%= yield %>
+</div><!-- container main-section -->
+<br>
+<footer>
   <div class="container">
-    <%= yield %>
-  </div><!-- container -->
-    <footer class="container">
-      <div class="social">
-        <p>
-          Facebook
-          Twitter
-          Pintrest
-        </p>
-        <p>
-          Join our mailing list
-        </p>
-      </div><!-- social -->
-    </footer>
+  <div class="social">
+    <p>
+      Facebook
+      Twitter
+      Pintrest
+    </p>
+    <p>
+      Join our mailing list
+    </p>
+  </div><!-- social -->
+</div>
+</footer>
 
 
 </body>

@@ -1,5 +1,5 @@
 - @meals.each do |meal|
-  %article.col-md-3.col-lg-3.col-sm-3.box.preview-meal
+  %article.col-md-4.col-lg-4.col-sm-4.box.preview-meal
     = link_to(image_tag(meal.image.url, :class=> "img-responsive"), meal_path(meal))
     .preview-details
       %span.name
@@ -11,3 +11,5 @@
         = meal.address
       %p
         = meal.user.username
+        %span.pull-right
+          = meal.scheduled.strftime("%I:%M%p %-d %b, %Y")

@@ -19,12 +19,24 @@
 #
 
 class Meal < ActiveRecord::Base
-  attr_accessible :cuisine, :image, :name, :notes, :price, :user_id, :servings, :order_ids, :address, :rating
+  attr_accessible :cuisine, :image, :name, :notes, :price, :user_id, :servings, :order_ids, :address, :rating, :scheduled
   has_many :orders
   belongs_to :user
 
+  # Validations
+  validate :scheduled_date_cannot_be_in_the_past
+  validate
+
+  # Geocoding
   geocoded_by :address
   after_validation :geocode, :if => :address_changed?
 
+  # Image Uploading
   mount_uploader :image, ImageUploader
+
+  def scheduled_date_cannot_be_in_the_past
+    errors.add(:scheduled, "time can't be in the past") if
+      !scheduled.blank? and scheduled < Date.today
+  end
+
 end

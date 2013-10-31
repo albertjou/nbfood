@@ -1,3 +1,9 @@
+* {
+  font-family: 'Tienne', serif;
+}
+
+
+
 ul {
   list-style: none;
 }
@@ -30,6 +36,7 @@ ul {
 .short-field {
   max-width: 400px;
 }
+
 /***********************
   Meal preview on homepage
 ***********************/
@@ -37,20 +44,14 @@ ul {
   font-size: 14px;
   line-height: 17px;
   vertical-align: top;
-  border: 5px solid;
-/*  min-width: 200px;
-  max-width: 350px;*/
-  width: 50%;
-  min-height: 300px;
-  max-height: 600px;
+  border: 1px solid;
 }
 
 .preview-meal img {
   border-bottom: 5px solid;
   padding-bottom: 15px;
   width: 100%;
-/*  max-height: 400px;
-  min-height: 300px;*/
+
 }
 
 .preview-details {
@@ -135,3 +136,78 @@ td {
 .label {
   color: black;
 }
+
+/***********************
+  Show individual order CSS
+***********************/
+
+.animated{-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-duration:1s;-moz-animation-duration:1s;-ms-animation-duration:1s;-o-animation-duration:1s;animation-duration:1s;}.animated.hinge{-webkit-animation-duration:1s;-moz-animation-duration:1s;-ms-animation-duration:1s;-o-animation-duration:1s;animation-duration:1s;}@-webkit-keyframes rotateIn {
+  0% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: rotate(-200deg);
+    opacity: 0;
+  } 100% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: rotate(0);
+    opacity: 1;
+  }
+}
+@-moz-keyframes rotateIn {
+  0% {
+    -moz-transform-origin: center center;
+    -moz-transform: rotate(-200deg);
+    opacity: 0;
+  }
+
+  100% {
+    -moz-transform-origin: center center;
+    -moz-transform: rotate(0);
+    opacity: 1;
+  }
+}
+@-o-keyframes rotateIn {
+  0% {
+    -o-transform-origin: center center;
+    -o-transform: rotate(-200deg);
+    opacity: 0;
+  }
+
+  100% {
+    -o-transform-origin: center center;
+    -o-transform: rotate(0);
+    opacity: 1;
+  }
+}
+@keyframes rotateIn {
+  0% {
+    transform-origin: center center;
+    transform: rotate(-200deg);
+    opacity: 0;
+  }
+
+  100% {
+    transform-origin: center center;
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+
+.rotateIn {
+  -webkit-animation-name: rotateIn;
+  -moz-animation-name: rotateIn;
+  -o-animation-name: rotateIn;
+  animation-name: rotateIn;
+}
+
+.jumbotron {
+
+}
+
+footer {
+  padding-top: 60px;
+  height: 200px;
+  background: rgb(0,0,0);
+  color: white;
+  text-shadow: 4px 4px 5px rgba(150, 150, 150, 1);
+}
+

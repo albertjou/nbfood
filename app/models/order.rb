@@ -14,7 +14,12 @@
 #
 
 class Order < ActiveRecord::Base
-  attr_accessible :servings, :user_id, :meal_id, :status, :rating
+  attr_accessible :servings, :user_id, :meal_id, :status, :rating, :expiry
   belongs_to :user
   belongs_to :meal
+
+# Validation
+
+
+
 end

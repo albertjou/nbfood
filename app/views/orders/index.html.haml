@@ -2,13 +2,16 @@
   Requested meals
 %table.col-lg-12.col-md-12.col-sm-12.col-xs-12
   %tr
+    %th.second Meal
     %th.first Location
-    %th.second host
+    %th.fifth Host
     %th.third Time
     %th.fourth Price
     %th.fifth Message
   - @orders_requested.each do |order|
     %tr
+      %td.meal
+        = link_to order.meal.name, meal_path(order.meal)
       %td.location
         = link_to order.meal.address, "http://maps.google.com/maps?&z=100&q=#{order.meal.address.to_s.gsub(" ","+")}"
       %td.host
@@ -24,12 +27,15 @@
   Completed meals
 %table.col-lg-12.col-md-12.col-sm-12.col-xs-12
   %tr
+    %th.second Meal
     %th.first Location
-    %th.second host
+    %th.fifth Host
     %th.third Time
     %th.sixth Rating
   - @orders_completed.each do |order|
     %tr
+      %td.meal
+        = link_to order.meal.name, meal_path(order.meal)
       %td.location
         = link_to order.meal.address, "http://maps.google.com/maps?&z=100&q=#{order.meal.address.to_s.gsub(" ","+")}"
       %td.host
@@ -45,12 +51,15 @@
   Cancelled meals
 %table.col-lg-12.col-md-12.col-sm-12.col-xs-12
   %tr
+    %th.second Meal
     %th.first Location
-    %th.second host
+    %th.fifth Host
     %th.third Time
     %th.sixth Message
   - @orders_cancelled.each do |order|
     %tr
+      %td.meal
+        = link_to order.meal.name, meal_path(order.meal)
       %td.requested
         = order.status
       %td.location
