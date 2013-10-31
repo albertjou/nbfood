@@ -13,12 +13,13 @@
 #  user_id    :integer
 #  latitude   :float
 #  longitude  :float
+#  rating     :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
 class Meal < ActiveRecord::Base
-  attr_accessible :cuisine, :image, :name, :notes, :price, :user_id, :servings, :order_ids, :address
+  attr_accessible :cuisine, :image, :name, :notes, :price, :user_id, :servings, :order_ids, :address, :rating
   has_many :orders
   belongs_to :user
 

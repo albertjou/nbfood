@@ -9,14 +9,21 @@ class OrdersController < ApplicationController
   def create
     @meal = Meal.find(params[:id])
     @order = Order.new params[:order]
+    @order.status = "requested"
     @order.user = @auth
     @auth.orders << @order
     @meal.orders << @order
-    redirect_to root_path
+    redirect_to orders_path
   end
 
   def index
-    @orders = @auth.orders
+    @orders_requested = Order.where(:status => "requested", :user_id => @auth.id)
+    @orders_completed = Order.where(:status => "completed", :user_id => @auth.id)
+    @orders_cancelled = Order.where(:status => "cancelled", :user_id => @auth.id)
+  end
+
+  def edit
+    @order = Order.find(params[:id])
   end
 
   private

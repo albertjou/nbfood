@@ -13,6 +13,7 @@
 #  password_digest :string(255)
 #  image           :string(255)
 #  cook            :boolean
+#  rating          :integer
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #
@@ -23,7 +24,7 @@ class User < ActiveRecord::Base
   before_save {self.email = email.downcase}
   before_save {self.username = username.downcase}
 
-  attr_accessible :bio, :cook, :email, :fname, :image, :lname, :password, :password_confirmation, :phone, :username, :order_ids, :dob, :cook
+  attr_accessible :bio, :cook, :email, :fname, :image, :lname, :password, :password_confirmation, :phone, :username, :order_ids, :dob, :cook, :rating
 
   has_many :orders
   has_many :meals

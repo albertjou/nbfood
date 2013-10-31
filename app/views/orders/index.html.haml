@@ -1,27 +1,61 @@
-%table
+%h1
+  Requested meals
+%table.col-lg-12.col-md-12.col-sm-12.col-xs-12
   %tr
-    %th Status
-    %th Location
-    %th host
-    %th Time
-    %th Price
-    %th Rating
-  - @orders.each do |order|
+    %th.first Location
+    %th.second host
+    %th.third Time
+    %th.fourth Price
+    %th.fifth Message
+  - @orders_requested.each do |order|
     %tr
-      %td.status
       %td.location
         = link_to order.meal.address, "http://maps.google.com/maps?&z=100&q=#{order.meal.address.to_s.gsub(" ","+")}"
       %td.host
         = link_to order.meal.user.fname, user_path(order.meal.user)
       %td.time
-        = order.created_at
+        = order.created_at.strftime("%I:%M%p %-d %b, %Y")
       %td.price
-        - if (order.status == 'requested')
-          = number_with_precision(order.meal.price, :precision => 0)
-        - else
-          N/A
+        $
+        = number_with_precision(order.meal.price, :precision => 0)
+      %td.message
+        = link_to(raw('<span class="glyphicon glyphicon-envelope"></span>'), user_path(order.meal.user))
+%h1
+  Completed meals
+%table.col-lg-12.col-md-12.col-sm-12.col-xs-12
+  %tr
+    %th.first Location
+    %th.second host
+    %th.third Time
+    %th.sixth Rating
+  - @orders_completed.each do |order|
+    %tr
+      %td.location
+        = link_to order.meal.address, "http://maps.google.com/maps?&z=100&q=#{order.meal.address.to_s.gsub(" ","+")}"
+      %td.host
+        = link_to order.meal.user.fname, user_path(order.meal.user)
+      %td.time
+        = order.created_at.strftime("%I:%M%p %-d %b, %Y")
       %td.rating
-        - if (order.status == 'completed')
-          Will implement rating system later
+        - if order.rating.present?
+          = order.rating
         - else
-          N/A
+          = rating link
+%h1
+  Cancelled meals
+%table.col-lg-12.col-md-12.col-sm-12.col-xs-12
+  %tr
+    %th.first Location
+    %th.second host
+    %th.third Time
+    %th.sixth Message
+  - @orders_cancelled.each do |order|
+    %tr
+      %td.requested
+        = order.status
+      %td.location
+        = link_to order.meal.address, "http://maps.google.com/maps?&z=100&q=#{order.meal.address.to_s.gsub(" ","+")}"
+      %td.host
+        = link_to order.meal.user.fname, user_path(order.meal.user)
+      %td.time
+        = order.created_at.strftime("%I:%M%p %-d %b, %Y")

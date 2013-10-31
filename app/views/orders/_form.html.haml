@@ -1,5 +1,9 @@
-= form_for @order, :method => :post, :url => buy_path do |f|
-  = f.label :servings
-  = f.text_field :servings, :autofocus => true, :class => "form-control"
+.col-md-3.col-lg-3.col-sm-3.col-xs-3
+  = form_for @order, :method => :post, :url => buy_path do |f|
+    = f.label :servings
+    = f.text_field :servings, :autofocus => true, :class => "form-control"
+    %br/
+    = f.time_select(:expiry, ampm: true, minute_step: 15)
 
-  = f.submit
+    %br/
+    = f.submit

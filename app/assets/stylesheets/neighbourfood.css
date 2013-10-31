@@ -38,8 +38,8 @@ ul {
   line-height: 17px;
   vertical-align: top;
   border: 5px solid;
-  min-width: 200px;
-  max-width: 350px;
+/*  min-width: 200px;
+  max-width: 350px;*/
   width: 50%;
   min-height: 300px;
   max-height: 600px;
@@ -49,8 +49,8 @@ ul {
   border-bottom: 5px solid;
   padding-bottom: 15px;
   width: 100%;
-  max-height: 400px;
-  min-height: 300px;
+/*  max-height: 400px;
+  min-height: 300px;*/
 }
 
 .preview-details {
@@ -66,7 +66,7 @@ ul {
   text-align: left;
 }
 
-.price {
+.preview-meal .price {
   float: right;
   font-size: 20px;
 }
@@ -101,3 +101,30 @@ ul {
   background-color: rgba(254,211,108,0.3);
   font-size: 1em;
 }
+
+/***********************
+  Show orders CSS
+***********************/
+table {
+  border: 3px solid black;
+  margin-bottom: 20px;
+  text-align: center;
+}
+th {
+  text-align: center;
+}
+td {
+  padding-bottom: 20px;
+}
+.first, .third {
+  width: 30%;
+}
+
+.second, .sixth {
+  width: 20%;
+}
+
+.fourth, .fifth {
+  width: 10%;
+}
+

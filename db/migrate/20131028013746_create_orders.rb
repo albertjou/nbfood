@@ -6,6 +6,7 @@ class CreateOrders < ActiveRecord::Migration
       t.integer :user_id
       t.integer :meal_id
       t.string :status
+      t.integer :rating
       t.timestamps
     end
   end

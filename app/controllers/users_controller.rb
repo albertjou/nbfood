@@ -11,7 +11,6 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new params[:user]
-    raise params.inspect
     if params[:input_terms_consent]
       if @user.save
         session[:user_id] = @user.id

@@ -21,11 +21,7 @@
   %div.input-group
     %span.input-group-addon.left
       = f.label :dob, "Date of Birth"
-    / = f.text_field :dob, :class => "form-control"
-
-    / Date select form helper
-    = f.date_select :dob
-
+    = f.text_field :dob, :class => "form-control"
     %span.input-group-addon.glyphicon.glyphicon-lock
   %br
   %div.input-group

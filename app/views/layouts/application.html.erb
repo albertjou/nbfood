@@ -23,7 +23,7 @@
           <li><%= link_to "Cook a Meal", new_meal_path %></li>
           <% if @auth.present? %>
             <% if @auth.meals.length > 0 %>
-              <li><%= link_to('My Meals', meals_path(@auth)) %></li>
+              <li><%= link_to('My Meals', meals_path) %></li>
             <% end %>
             <% if @auth.orders.length > 0 %>
               <li><%= link_to('My Orders', orders_path) %></li>

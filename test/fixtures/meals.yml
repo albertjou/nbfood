@@ -13,6 +13,7 @@
 #  user_id    :integer
 #  latitude   :float
 #  longitude  :float
+#  rating     :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #

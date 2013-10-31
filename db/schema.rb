@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(:version => 20131028013746) do
     t.integer  "user_id"
     t.integer  "meal_id"
     t.string   "status"
+    t.integer  "rating"
     t.datetime "created_at",                :null => false
     t.datetime "updated_at",                :null => false
   end

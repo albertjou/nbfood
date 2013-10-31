@@ -13,6 +13,7 @@
 #  password_digest :string(255)
 #  image           :string(255)
 #  cook            :boolean
+#  rating          :integer
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #
