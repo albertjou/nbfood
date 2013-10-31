@@ -7,6 +7,7 @@ Neighbourfood::Application.routes.draw do
   get '/meals/:id/buy' => 'orders#new', :as => 'buy'
   post '/meals/:id/buy' => 'orders#create'
   get '/orders' => 'orders#index'
+  get '/about' => 'pages#about', :as => 'about'
 
   resources :users, :meals, :orders
   # , except => [:edit] do

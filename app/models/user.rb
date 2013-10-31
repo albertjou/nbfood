@@ -48,16 +48,17 @@ class User < ActiveRecord::Base
 
   validates :password,
           :length => {
-            :in => 6..20,
-            :message => "Password must be between 6 and 20 characters" }
+            :minimum => 6,
+            :if => lambda{ new_record? || !password.nil? },
+            :message => "must be at least 6 characters" }
 
   validate :dob_must_be_greater_than_12
+
 
 def dob_must_be_greater_than_12
     errors.add(:dob, "error. You must be at least 12 to sign up") if
       !dob.blank? and (dob >= (Date.today - 12.years))
 end
-
 
     # Image Uploading
   mount_uploader :image, ImageUploader

@@ -13,4 +13,7 @@ def home
   end
 end
 
+def about
+end
+
 end

@@ -1,6 +1,8 @@
 - if @user.errors.any?
-  %ol
+  .alert.alert-info.alert-dismissable.col-12-lg.col-12-md.col-12-sm.container.text-center
+    ==<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
     - @user.errors.full_messages.each do |msg|
-      %li= msg
+      %h5
+        = msg
 
 = render partial: "form"
