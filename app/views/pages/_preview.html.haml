@@ -1,0 +1,13 @@
+- @meals.each do |meal|
+  %article.col-md-3.col-lg-3.col-sm-3.box.preview-meal
+    = link_to(image_tag(meal.image.url, :class=> "img-responsive"), meal_path(meal))
+    .preview-details
+      %span.name
+        = link_to meal.name, meal_path(meal)
+      %span.price
+        $
+        = number_with_precision(meal.price, :precision => 0)
+      %p
+        = meal.address
+      %p
+        = meal.user.username
