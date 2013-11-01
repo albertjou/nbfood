@@ -3,7 +3,7 @@
     = f.label :servings
     = f.text_field :servings, :autofocus => true, :class => "form-control"
     %br/
-    = f.time_select(:expiry, ampm: true, minute_step: 15)
+    = f.datetime_select(:expiry, ampm: true, minute_step: 15)
 
     %br/
     = f.submit
