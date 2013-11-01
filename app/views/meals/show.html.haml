@@ -1,22 +1,25 @@
 .row
   / LEFT Column (meal details)
   .col-lg-4.col-md-4.about
-    %h2
-      = @meal.name
-    %p= @meal.address
-    .panel
+    .panel.panel-primary
       .panel-heading
-        %h3.panel-title
-          Details
-      %p
+        %h1.panel-title
+          = @meal.name
+          %span.price
+            $
+            = number_with_precision(@meal.price, :precision => 0)
+      %p.panel-address.panel-body
+        = @meal.address
+        - if @meal.user != @auth
+          = link_to("Buy", buy_path, :class => 'buy price')
+      %p.panel-body
         = @meal.notes
-    %p.price
-      $
-      = number_with_precision(@meal.price, :precision => 0)
-      - if @meal.user != @auth
-        = link_to("Buy", buy_path, :class => 'buy')
-      = link_to(image_tag("http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@meal.latitude}%2C#{@meal.longitude}", :class => "img-responsive"),"http://maps.google.com/maps?&z=100&q=#{@meal.address.to_s.gsub(" ","+")}", :target => 'new')
-
+      %p.panel-body
+        = link_to(image_tag("http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@meal.latitude}%2C#{@meal.longitude}", :class => "img-responsive"),"http://maps.google.com/maps?&z=100&q=#{@meal.address.to_s.gsub(" ","+")}", :target => 'new')
+      - if @meal.user == @auth
+        %p.panel-body.text-center
+          = link_to("Edit", edit_meal_path(@meal), :class=>'control')
+          = link_to("Delete", meal_path(@meal), :method => 'delete', :confirm => 'Are you sure?', :class=> 'control')
   / MIDDLE Column (meal picture)
 
   .col-lg-5.col-md-5.images
@@ -25,17 +28,18 @@
   / RIGHT Column (chef details)
 
   .col-lg-3.col-md-3.chef
-    %img{:src => "#{@meal.user.image.thumb.url}"}
-    %h2
-      = link_to("#{@meal.user.fname}",user_path(@meal.user))
-    %p
-      Contact me button
-    %p
-      Rating - feature coming soon
-    %p
-      = @meal.user.bio
-    %p
-      Verification - feature coming soon
+    .panel.panel-success
+      .panel-heading
+        %img.panel-title.text-center{:src => "#{@meal.user.image.thumb.url}"}
+        %h2.panel-title.text-center
+          = link_to("#{@meal.user.fname}",user_path(@meal.user))
+      %p.panel-body
+        = @meal.user.bio
+      %ul.list-group
+        %li.list-group-item
+          Rating - feature coming soon
+        %li.list-group-item
+          Verification - feature coming soon
 
 .row
   / BOTTOM Row (nearby meals)
@@ -44,8 +48,4 @@
       Nearby meals
     = render partial: "pages/preview"
 
-- if @meal.user == @auth
-  .row.col-lg-12.col-md-12.controls
-    = link_to("Edit", edit_meal_path(@meal))
-    = link_to("Delete", meal_path(@meal), :method => 'delete', :confirm => 'Are you sure?')
 

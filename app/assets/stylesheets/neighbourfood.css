@@ -68,7 +68,6 @@ ul {
 }
 
 .preview-meal .price {
-  float: right;
   font-size: 20px;
 }
 
@@ -80,18 +79,11 @@ ul {
   text-align: center;
 }
 
-.about {
-  background-color: rgba(254,211,108,0.3);
-  padding-bottom: 20px;
-  padding-top: 20px;
-}
-
 .about img {
   border-radius: 50px;
 }
 
 .images {
-  background-color: rgba(254,159,59,0.3);
   padding-bottom: 20px;
   padding-top: 20px;
 }
@@ -101,6 +93,120 @@ ul {
   padding-top: 20px;
   background-color: rgba(254,211,108,0.3);
   font-size: 1em;
+}
+
+.chef img{
+  border-radius: 50%;
+}
+
+.price {
+  float: right;
+}
+
+.panel-title {
+  font-size: 30px;
+}
+
+.panel-body {
+  padding-top: 0;
+  padding-bottom: 10px;
+}
+.buy a, a:hover{
+  text-decoration: none;
+  color: white;
+}
+
+.buy.price {
+  margin-top: 2px;
+}
+.buy {
+  -moz-box-shadow:inset 1px 0px 7px 0px #97c4fe;
+  -webkit-box-shadow:inset 1px 0px 7px 0px #97c4fe;
+  box-shadow:inset 1px 0px 7px 0px #97c4fe;
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #428aca), color-stop(1, #1e62d0) );
+  background:-moz-linear-gradient( center top, #428aca 5%, #1e62d0 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#428aca', endColorstr='#1e62d0');
+  background-color:#428aca;
+  -webkit-border-top-left-radius:20px;
+  -moz-border-radius-topleft:20px;
+  border-top-left-radius:20px;
+  -webkit-border-top-right-radius:20px;
+  -moz-border-radius-topright:20px;
+  border-top-right-radius:20px;
+  -webkit-border-bottom-right-radius:20px;
+  -moz-border-radius-bottomright:20px;
+  border-bottom-right-radius:20px;
+  -webkit-border-bottom-left-radius:20px;
+  -moz-border-radius-bottomleft:20px;
+  border-bottom-left-radius:20px;
+  text-indent:0;
+  border:1px solid #337fed;
+  display:inline-block;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:20px;
+  font-weight:bold;
+  font-style:normal;
+  height:42px;
+  line-height:42px;
+  width:131px;
+  text-decoration:none;
+  text-align:center;
+  text-shadow:1px 9px 9px #1570cd;
+}
+.buy:hover {
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #1e62d0), color-stop(1, #428aca) );
+  background:-moz-linear-gradient( center top, #1e62d0 5%, #428aca 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#1e62d0', endColorstr='#428aca');
+  background-color:#1e62d0;
+}.buy:active {
+  position:relative;
+  top:1px;
+}
+
+.control {
+  -moz-box-shadow:inset 1px 0px 7px 0px #f5978e;
+  -webkit-box-shadow:inset 1px 0px 7px 0px #f5978e;
+  box-shadow:inset 1px 0px 7px 0px #f5978e;
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #f24537), color-stop(1, #c62d1f) );
+  background:-moz-linear-gradient( center top, #f24537 5%, #c62d1f 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f24537', endColorstr='#c62d1f');
+  background-color:#f24537;
+  -webkit-border-top-left-radius:20px;
+  -moz-border-radius-topleft:20px;
+  border-top-left-radius:20px;
+  -webkit-border-top-right-radius:20px;
+  -moz-border-radius-topright:20px;
+  border-top-right-radius:20px;
+  -webkit-border-bottom-right-radius:20px;
+  -moz-border-radius-bottomright:20px;
+  border-bottom-right-radius:20px;
+  -webkit-border-bottom-left-radius:20px;
+  -moz-border-radius-bottomleft:20px;
+  border-bottom-left-radius:20px;
+  text-indent:0;
+  border:1px solid #d02718;
+  display:inline-block;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:20px;
+  font-weight:bold;
+  font-style:normal;
+  height:42px;
+  line-height:42px;
+  width:131px;
+  text-decoration:none;
+  text-align:center;
+  text-shadow:1px 9px 9px #810e05;
+}
+.control:hover {
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #c62d1f), color-stop(1, #f24537) );
+  background:-moz-linear-gradient( center top, #c62d1f 5%, #f24537 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#c62d1f', endColorstr='#f24537');
+  background-color:#c62d1f;
+}.control:active {
+  position:relative;
+  top:1px;
 }
 
 /***********************
@@ -129,7 +235,7 @@ td {
   width: 10%;
 }
 
-.requested-order h1{
+.requested-order{
   color: green;
 }
 /***********************

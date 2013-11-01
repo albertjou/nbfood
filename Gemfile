@@ -23,6 +23,7 @@ group :assets do
   gem 'less-rails-bootstrap'
   gem 'carrierwave'
   gem 'fog', '~>1.3.1'
+  gem 'mailboxer'
 end
 
 group :development, :test do
@@ -42,7 +43,6 @@ group :development, :test do
 end
 
 # group :wishlist do
-#   gem 'paperclip', '~> 3.0'
 #   gem 'devise'
 #   gem 'validatestimeliness'
 #   gem 'dynamicform'

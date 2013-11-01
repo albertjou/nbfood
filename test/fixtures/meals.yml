@@ -14,6 +14,7 @@
 #  latitude   :float
 #  longitude  :float
 #  rating     :integer
+#  scheduled  :datetime
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #

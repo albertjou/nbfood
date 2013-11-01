@@ -3,7 +3,7 @@
 # Table name: orders
 #
 #  id         :integer          not null, primary key
-#  expiry     :time
+#  pickup     :datetime
 #  servings   :integer          default(1)
 #  user_id    :integer
 #  meal_id    :integer

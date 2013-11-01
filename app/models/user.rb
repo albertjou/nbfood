@@ -60,6 +60,15 @@ def dob_must_be_greater_than_12
       !dob.blank? and (dob >= (Date.today - 12.years))
 end
 
+    # Mailboxer
+# acts_as_messageable
+
+# def name
+#   email
+# end
+
+
+
     # Image Uploading
   mount_uploader :image, ImageUploader
 
