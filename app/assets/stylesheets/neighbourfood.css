@@ -44,7 +44,6 @@ ul {
   font-size: 14px;
   line-height: 17px;
   vertical-align: top;
-  border: 1px solid;
 }
 
 .preview-meal img {
@@ -111,7 +110,7 @@ ul {
   padding-top: 0;
   padding-bottom: 10px;
 }
-.buy a, a:hover{
+.buy a, .buy a:hover{
   text-decoration: none;
   color: white;
 }

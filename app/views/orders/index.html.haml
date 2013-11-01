@@ -20,11 +20,6 @@
         %td.time
           = order.pickup.strftime("%I:%M%p")
           = order.meal.scheduled.strftime("%-d %b, %Y")
-          (
-          = (order.pickup.hour - Time.now.hour)
-          hours
-          = (order.pickup.minute - Time.now.minute)
-          )
         %td.price
           $
           = number_with_precision(order.meal.price, :precision => 0)
