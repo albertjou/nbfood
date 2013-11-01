@@ -53,6 +53,7 @@ class User < ActiveRecord::Base
             :message => "must be at least 6 characters" }
 
   validate :dob_must_be_greater_than_12
+  validates :image, :presence => true
 
 
 def dob_must_be_greater_than_12
@@ -60,12 +61,16 @@ def dob_must_be_greater_than_12
       !dob.blank? and (dob >= (Date.today - 12.years))
 end
 
-    # Mailboxer
-# acts_as_messageable
+acts_as_messageable
 
-# def name
-#   email
-# end
+def name
+  self.username
+end
+
+
+def email
+  self.email
+end
 
 
 

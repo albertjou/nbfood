@@ -32,6 +32,8 @@ class Meal < ActiveRecord::Base
   geocoded_by :address
   after_validation :geocode, :if => :address_changed?
 
+  validates :image, :presence => true
+
   # Image Uploading
   mount_uploader :image, ImageUploader
 

@@ -11,6 +11,7 @@ gem 'bcrypt-ruby', '3.0.0'
 gem 'geocoder'
 gem 'rails_12factor'
 gem 'rmagick' , :require => 'RMagick'
+gem 'mailboxer'
 
 
 # Gems used only for assets and not required
