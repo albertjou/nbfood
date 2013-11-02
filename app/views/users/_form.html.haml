@@ -9,6 +9,24 @@
   %br
   %div.input-group
     %span.input-group-addon.left
+      = f.label :email
+    = f.text_field :email, :class => "form-control"
+    %span.input-group-addon.glyphicon.glyphicon-lock
+  %br
+  %div.input-group
+    %span.input-group-addon.left
+      = f.label :password
+    = f.password_field :password, :class => "form-control"
+    %span.input-group-addon.glyphicon.glyphicon-lock
+  %br
+  %div.input-group
+    %span.input-group-addon.left
+      = f.label :password_confirmation, "Confirm"
+    = f.password_field :password_confirmation, :class => "form-control"
+    %span.input-group-addon.glyphicon.glyphicon-lock
+  %br/
+  %div.input-group
+    %span.input-group-addon.left
       = f.label :first_name
     = f.text_field :fname, :class => "form-control"
   %br
@@ -20,20 +38,14 @@
   %br
   %div.input-group
     %span.input-group-addon.left
-      = f.label :dob, "Date of Birth"
-    = f.text_field :dob, :class => "form-control"
-    %span.input-group-addon.glyphicon.glyphicon-lock
-  %br
-  %div.input-group
-    %span.input-group-addon.left
-      = f.label :email
-    = f.text_field :email, :class => "form-control"
-    %span.input-group-addon.glyphicon.glyphicon-lock
-  %br
-  %div.input-group
-    %span.input-group-addon.left
       = f.label :phone
     = f.text_field :phone, :class => "form-control"
+    %span.input-group-addon.glyphicon.glyphicon-lock
+  %br
+  %div.input-group
+    %span.input-group-addon.left
+      = f.label :dob, "Date of Birth"
+    = f.text_field :dob, :class => "form-control"
     %span.input-group-addon.glyphicon.glyphicon-lock
   %br
   %div.input-group
@@ -41,16 +53,6 @@
       = f.label :bio
     = f.text_area :bio, :class => "form-control", :rows => "5"
   %br
-  %div.input-group
-    %span.input-group-addon.left
-      = f.label :password
-    = f.password_field :password, :class => "form-control"
-  %br
-  %div.input-group
-    %span.input-group-addon.left
-      = f.label :password_confirmation, "Confirm"
-    = f.password_field :password_confirmation, :class => "form-control"
-  %br/
   %div.input-group
     - if @user.image.url.present?
       %img{:src => @user.image.url, :alt => ""}

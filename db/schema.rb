@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131031235419) do
+ActiveRecord::Schema.define(:version => 20131101060264) do
 
   create_table "conversations", :force => true do |t|
     t.string   "subject",    :default => ""
@@ -96,5 +96,9 @@ ActiveRecord::Schema.define(:version => 20131031235419) do
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
   end
+
+  add_foreign_key "notifications", "conversations", name: "notifications_on_conversation_id"
+
+  add_foreign_key "receipts", "notifications", name: "receipts_on_notification_id"
 
 end

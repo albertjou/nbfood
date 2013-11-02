@@ -36,7 +36,8 @@
           <li><%= link_to('Edit User', edit_user_path(@auth)) %></li>
           <li><%= link_to('Logout ' + @auth.username, logout_path, :method => 'get', :confirm => 'Are you sure?') %></li>
           <% else %>
-          <li><%= link_to("Sign Up", new_user_path) %></li>
+          <li><%= link_to("Be a host", new_user_path) %></li>
+          <li><%= link_to("Be a guest", new_user_path) %></li>
           <%= render :partial => '/session/login' %>
           <% end %>
         </ul>
