@@ -2,8 +2,7 @@ class CreateMeals < ActiveRecord::Migration
   def change
     create_table :meals do |t|
       t.string :name
-      t.string :image
-      # ,:default => "/assets/fooddefault.gif"
+      t.string :image, :default => "/assets/fooddefault.gif"
       t.string :cuisine
       t.string :address
       t.decimal :price, scale: 2
