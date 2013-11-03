@@ -1,4 +1,12 @@
-%h2= @user.fname
-%h3= @user.image
-%ul
-  %li= @user.bio
+.panel.panel-success
+  .panel-heading
+    %img.panel-title.text-center{:src => "#{@user.image.url}"}
+    %h2.panel-title.text-center
+      = @user.fname
+  %p.panel-body
+    = @user.bio
+  %ul.list-group
+    %li.list-group-item
+      Rating - feature coming soon
+    %li.list-group-item
+      Verification - feature coming soon
